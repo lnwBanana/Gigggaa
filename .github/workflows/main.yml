@@ -8,6 +8,8 @@ jobs:
       - uses: actions/checkout@v6
       - name: unzip project
         run: unzip -o dead-eye-fabric.zip
+      - name: fix client entrypoint
+        run: sed -i 's/public void onInitialize()/public void onInitializeClient()/' src/client/java/com/deadeye/client/DeadEyeClient.java
       - uses: actions/setup-java@v5
         with:
           java-version: '25'
