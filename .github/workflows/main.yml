@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
+      - name: unzip project
+        run: unzip -o dead-eye-fabric.zip
       - uses: actions/setup-java@v5
         with:
           java-version: '25'
